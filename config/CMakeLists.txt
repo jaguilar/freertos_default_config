@@ -4,6 +4,7 @@ if (NOT TARGET freertos_config)
   target_include_directories(freertos_config SYSTEM
     INTERFACE
     freertos_config) # The config file directory
+    target_compile_options(freertos_config INTERFACE -DPICO_TIME_DEFAULT_ALARM_POOL_DISABLED)
 endif()
 
 if (NOT TARGET lwip_config)
